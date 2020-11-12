@@ -1,0 +1,18 @@
+<app-menu></app-menu>
+
+<ion-content fullscreen="true">
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">
+        അറിയിപ്പുകൾ
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list>
+    <text-message *ngFor="let message of getMessages()" [message]="message"></text-message>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,44 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-buttons *ngIf="!showSearchbar" slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <!--   <ion-segment *ngIf="ios" [(ngModel)]="segment" (ionChange)="updateSchedule()">
+      <ion-segment-button value="all">
+        പൊതുവായത്
+      </ion-segment-button>
+      <ion-segment-button value="favorites">
+        നിങ്ങളുടേത്
+      </ion-segment-button>
+    </ion-segment> -->
+    <ion-title *ngIf="!ios && !showSearchbar">2020 ഡിസംബറിലെ ഗ്രാമസഭ </ion-title>
+    <ion-searchbar *ngIf="showSearchbar" showCancelButton="always" [(ngModel)]="queryText"
+      (ionChange)="updateSchedule()" (ionCancel)="showSearchbar = false" placeholder="Search"></ion-searchbar>
+    <ion-buttons slot="end">
+      <!-- 
+      <ion-button *ngIf="!ios && !showSearchbar" (click)="showSearchbar = true">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button *ngIf="!showSearchbar" (click)="presentFilter()">
+        <span *ngIf="ios">Filter</span>
+        <span *ngIf="!ios">
+          <ion-icon slot="icon-only" name="options"></ion-icon>
+        </span>
+      </ion-button> -->
+      <ion-tab-button routerLink="/ente/gramam/messages" routerLinkActive="active">
+        <ion-icon [color]="($msgSub | async)?'danger':'primary'" name="mail"></ion-icon>
+        <!-- <ion-label [color]="($msgSub | async)?'danger':'primary'">{{$msgSub | async}}</ion-label> -->
+      </ion-tab-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <!-- <ion-toolbar *ngIf="!ios">
+    <ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()">
+      <ion-segment-button value="all">
+        പൊതുവായത്
+      </ion-segment-button>
+      <ion-segment-button value="favorites">
+        നിങ്ങളുടേത്
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar> -->
+</ion-header>

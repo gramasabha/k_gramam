@@ -1,0 +1,41 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color='primary' (click)="skipTip()" [hidden]="!showSkip">അടുത്തത്...
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+
+  <ion-slides #player [pager]="true" [scrollbar]="true" paginationType="bullets" [options]="slideOpts">
+    <ion-slide *ngFor="let tip of tips">
+      <!-- <img [src]="imageLinks[0]" class="slide-image" /> -->
+      <h2 class="slide-title">{{tip.title}}</h2>
+      <p>{{tip.desc}}</p>
+      <ul>
+        <li *ngFor="let msg of tip.list">{{msg}}</li>
+
+      </ul>
+
+
+      <ion-chip outline color="primary" (click)="goPrev()">
+        <ion-icon name="play-back"></ion-icon>
+        <ion-label>പുറകിലേക്ക്</ion-label>
+      </ion-chip>
+      <!-- 
+      <ion-chip outline color="primary">
+        <ion-label>All Tips...</ion-label>
+        <ion-icon name="musical-notes"></ion-icon>
+      </ion-chip> -->
+
+      <ion-chip outline color="primary" (click)="goNext()">
+        <ion-label>മുന്നിലേക്ക്</ion-label>
+        <ion-icon name="play-forward"></ion-icon>
+      </ion-chip>
+    </ion-slide>
+  </ion-slides>
+
+
+</ion-content>

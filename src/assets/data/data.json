@@ -1,0 +1,95 @@
+{
+  "gramam": [
+    {
+      "venue": "Govt LP School, Balamallu",
+      "title": "നവംബർ മാസത്തെ സാധാരണ ഗ്രാമസഭ",
+      "status": "completed"
+    }
+  ],
+  "projects": [
+    {
+      "name": "വെള്ളക്കെട്ടിന് പരിഹാരം : മിൽമ - അങ്കണവാടി റോഡിൽ കാന നിർമ്മിക്കുന്നു.",
+      "about": "പ്രദേശത്തെ വെള്ളക്കെട്ട് ഒഴിവാക്കാനായി റോഡിനോട് ചേർന്ന് കാന നിർമ്മിക്കുന്നു ",
+      "title": "തനത് പദ്ധതി ",
+      "location": "Everywhere",
+      "id": "1",
+      "budget": "4,99,999.99"
+    },
+    {
+      "name": "ജലക്ഷാമ പരിഹാരം : അമ്പലകുളം പുനർനിർമ്മിക്കുന്നു.",
+      "about": "പ്രദേശത്തെ ജലക്ഷാമം ഒഴിവാക്കാനായി റോഡിനോട് ചേർന്ന് കുളത്തിന് ഭിത്തി നിർമ്മിക്കുന്നു ",
+      "title": "തനത് പദ്ധതി",
+      "location": "Everywhere",
+      "id": "2",
+      "budget": "199,99,999.99"
+    },
+    {
+      "name": "വെള്ളക്കെട്ടിന് പരിഹാരം : പെരുംതോട് കയർ ഭൂവസ്‌ത്രം അണിയിക്കുന്നു.",
+      "about": "തോടിന്റെ വീതി പുനഃസ്ഥാപിച്ചു കയർ ഭൂവസ്‌ത്രം അണിയിക്കുന്നു ",
+      "title": "ദേശീയ തൊഴിലുറപ്പ് പദ്ധതി",
+      "location": "Everywhere",
+      "id": "3",
+      "budget": "75,99,999.99"
+    }
+  ],
+  "map": [
+    {
+      "name": "Monona Terrace Convention Center",
+      "lat": 43.071584,
+      "lng": -89.38012,
+      "center": true
+    },
+    {
+      "name": "Ionic HQ",
+      "lat": 43.074395,
+      "lng": -89.381056
+    },
+    {
+      "name": "Afterparty - Brocach Irish Pub",
+      "lat": 43.07336,
+      "lng": -89.38335
+    }
+  ],
+  "tracks": [
+    {
+      "name": "Angular",
+      "icon": "logo-angular"
+    },
+    {
+      "name": "Documentation",
+      "icon": "document"
+    },
+    {
+      "name": "Food",
+      "icon": "restaurant"
+    },
+    {
+      "name": "Ionic",
+      "icon": "logo-ionic"
+    },
+    {
+      "name": "Tooling",
+      "icon": "hammer"
+    },
+    {
+      "name": "Design",
+      "icon": "color-palette"
+    },
+    {
+      "name": "Services",
+      "icon": "cog"
+    },
+    {
+      "name": "Workshop",
+      "icon": "construct"
+    },
+    {
+      "name": "Communication",
+      "icon": "call"
+    },
+    {
+      "name": "Navigation",
+      "icon": "compass"
+    }
+  ]
+}

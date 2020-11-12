@@ -1,0 +1,7 @@
+{
+  "name": "k_gramam",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

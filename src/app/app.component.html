@@ -1,0 +1,49 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+        <ion-list id="inbox-list" lines="none">
+          <ion-list-header>ഓൺലൈൻ ഗ്രാമസഭ</ion-list-header>
+          <ion-note>ബാലമല്ലു പഞ്ചായത്ത് </ion-note>
+
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item (click)="selectedIndex = i" routerLinkActive="selected" routerDirection="root" [routerLink]="[p.url]"
+              lines="none" detail="false"
+              [class.selected]="selectedIndex == i">
+              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle autoHide="false">
+            <ion-item routerLink="/help" routerLinkActive="active" routerDirection="root" detail="false">
+              <ion-icon slot="start" name="help"></ion-icon>
+              <ion-label>
+                സഹായം
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          
+          <ion-item *ngIf="$currentUser | async as user">
+            <ion-icon slot="start" name="moon-outline"></ion-icon>
+            <ion-label>
+              {{dark ? 'അജ്ഞാതൻ':user.name}}
+            </ion-label>
+            <ion-toggle [(ngModel)]="dark" (ionChange)="strangeFriend()"></ion-toggle>
+          </ion-item>
+
+        </ion-list>
+
+        <ion-list id="labels-list">
+          <ion-list-header>ഉത്തരവുകൾ</ion-list-header>
+
+          <ion-item *ngFor="let label of labels" lines="none">
+            <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
+            <ion-label>{{ label }}</ion-label>
+          </ion-item>
+        </ion-list>
+        
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

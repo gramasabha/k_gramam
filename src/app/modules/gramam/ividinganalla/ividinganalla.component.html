@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title size="large">
+        താൽക്കാലികമായി ഇത് ലഭ്യമല്ല!
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-list>
+    <div class="ion-padding">
+      <h1>താൽക്കാലികമായി ഇത് ലഭ്യമല്ല!</h1>
+      <p>
+        ഇത് വരെ ഈ വിവരങ്ങൾ ആവശ്യപ്പെട്ടവരുടെ എണ്ണം : {{count}}
+      </p>
+      <ion-card>
+        <ion-item lines="none" routerLink="/ente/gramam/messages" routerLinkActive="active" routerDirection="root"
+          detail="false">
+          <ion-icon slot="start" name="home"></ion-icon>
+          <ion-label>
+            വീണ്ടും ആരംഭിക്കുക
+          </ion-label>
+          <ion-icon slot="end" name="enter"></ion-icon>
+        </ion-item>
+      </ion-card>
+
+      <p class="break-it-all">
+        ഈ പേജിൽ വിവരങ്ങൾ കൂട്ടി ചേർക്കാൻ <strong>പഞ്ചായത്ത് സെക്രട്ടറിയെ</strong> ചുമതലപ്പെടുത്തിയിട്ടുണ്ട്. 3
+        ദിവസത്തിനുള്ളിൽ ആവശ്യമായ
+        വിവരങ്ങൾ ലഭ്യമാക്കിയില്ലെങ്കിൽ സ്വമേധയാ ഉദ്യോഗസ്ഥനെതിരെ നടപടികൾ സ്വീകരിക്കുന്നതാണ്. താങ്കളുടെ
+        പരിശ്രമത്തിന് നന്ദി.
+      </p>
+    </div>
+  </ion-list>
+</ion-content>

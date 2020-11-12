@@ -1,0 +1,44 @@
+<ion-header translucent>
+    <ion-toolbar>
+
+        <ion-title>{{title}} </ion-title>
+
+        <ion-buttons slot="end">
+            <ion-button (click)="dismissModal()">
+                <ion-icon slot="icon-only" name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                <ion-chip outline color="primary">
+                    <ion-icon name="sunny"></ion-icon>
+                    <ion-label>#1</ion-label>
+                </ion-chip>
+
+            </ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+            <p class="center-attr">
+                {{desc}}
+            </p>
+            <ul>
+                <li *ngFor="let msg of list">{{msg}}</li>
+
+            </ul>
+            <ion-chip outline color="primary">
+                <ion-icon name="star"></ion-icon>
+                <ion-label>More...</ion-label>
+                <ion-icon name="play-forward"></ion-icon>
+            </ion-chip>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-list lines="none">
+        <ion-item> </ion-item>
+    </ion-list>
+</ion-content>
