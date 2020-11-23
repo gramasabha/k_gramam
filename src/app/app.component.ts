@@ -47,6 +47,10 @@ export class AppComponent implements OnInit {
   $anonymousTip: Subscription;
   modelData: Tip;
 
+  enableBackdropDismiss = false;
+  showBackdrop = false;
+  shouldPropagate = false;
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
