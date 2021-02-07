@@ -2,6 +2,12 @@
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
+        <amplify-authenticator>
+          <div>
+            My App
+            <amplify-sign-out></amplify-sign-out>
+          </div>
+        </amplify-authenticator>
         <ion-list id="inbox-list" lines="none">
           <ion-list-header>ഓൺലൈൻ ഗ്രാമസഭ</ion-list-header>
           <ion-note>ബാലമല്ലു പഞ്ചായത്ത് </ion-note>
@@ -34,7 +40,7 @@
         </ion-list>
 
         <ion-list id="labels-list">
-          <ion-list-header>ഉത്തരവുകൾ</ion-list-header>
+          <ion-list-header>ഉത്തരവുകൾ{{showBackdrop}}</ion-list-header>
 
           <ion-item *ngFor="let label of labels" lines="none">
             <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
@@ -47,5 +53,6 @@
     <ion-router-outlet id="main-content"></ion-router-outlet>
   </ion-split-pane>
 </ion-app>
-<ion-backdrop [tappable]="enableBackdropDismiss" [visible]="showBackdrop" [stopPropagation]="shouldPropagate">
+<ion-backdrop *ngIf="backup" [tappable]="enableBackdropDismiss" [visible]="showBackdrop"
+  [stopPropagation]="shouldPropagate" (ionBackdropTap)="checkThis()">
 </ion-backdrop>

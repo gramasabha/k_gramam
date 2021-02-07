@@ -7,6 +7,7 @@ import { AuthService, TipsService } from './@shared/services';
 import { Observable, Subscription } from 'rxjs';
 import { Tip, User } from './@shared/models';
 import { AnonymousModal } from './modals/anonymous.modal';
+import { APIService } from './API.service';
 
 @Component({
   selector: 'app-root',
@@ -47,9 +48,11 @@ export class AppComponent implements OnInit {
   $anonymousTip: Subscription;
   modelData: Tip;
 
-  enableBackdropDismiss = false;
-  showBackdrop = false;
+  enableBackdropDismiss = true;
+  showBackdrop = true;
   shouldPropagate = false;
+  backup: boolean = true;
+  tasks: { __typename: "Task"; id: string; title: string; description: string; status: string; createdAt: string; updatedAt: string; }[];
 
   constructor(
     private platform: Platform,
@@ -57,7 +60,8 @@ export class AppComponent implements OnInit {
     private statusBar: StatusBar,
     private authService: AuthService,
     public modalController: ModalController,
-    private tipsService: TipsService
+    private tipsService: TipsService,
+    private apiService: APIService
   ) {
     this.initializeApp();
   }
@@ -66,6 +70,13 @@ export class AppComponent implements OnInit {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      console.log('Loading tasks');
+      
+      this.apiService.ListTasks().then((evt) => {
+        this.tasks = evt.items;
+        console.log(evt);
+        
+      });
     });
   }
 
@@ -93,6 +104,12 @@ export class AppComponent implements OnInit {
     if (this.dark) {
       this.presentModal();
     }
+  }
+
+  checkThis() {
+    console.log('drop it');
+    this.showBackdrop = false;
+    this.backup = !this.backup;
   }
 }
 

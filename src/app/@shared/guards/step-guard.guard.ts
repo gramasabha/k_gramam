@@ -27,6 +27,9 @@ export class StepGuardGuard implements CanActivate, CanActivateChild {
   }
 
   checkStep(url: string) {
+    console.log('checkStep');
+
+    return true;
     // Let them skip
     if (this.tipsService.currentTipValue === url) {
       return true;

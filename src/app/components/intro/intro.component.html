@@ -26,7 +26,8 @@
     <p></p>
     <ion-card>
       <ion-list lines="none">
-        <ion-item routerLink="/ente/gramam/messages" class="active" routerDirection="root" detail="false">
+        <ion-item [ngClass]="{'active':test}" routerLink="/ente/gramam/messages" class="active" routerDirection="root"
+          detail="false">
           <ion-icon slot="start" name="enter"></ion-icon>
           <ion-label>
             ഇവിടെ തുടങ്ങാം...

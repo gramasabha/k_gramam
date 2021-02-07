@@ -18,6 +18,14 @@ import { StepperComponent } from './components/stepper/stepper.component';
 import { HelpComponent } from './components/help/help.component';
 import { AnonymousModal } from './modals/anonymous.modal';
 
+/* Add Amplify imports */
+import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
+import Amplify from 'aws-amplify';
+import awsconfig from '../aws-exports';
+
+/* Configure Amplify resources */
+Amplify.configure(awsconfig);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +36,7 @@ import { AnonymousModal } from './modals/anonymous.modal';
   ],
   entryComponents: [],
   imports: [
+    AmplifyUIAngularModule,
     BrowserModule,
     FormsModule,
     IonicModule.forRoot(),
